@@ -1,2 +1,2 @@
-git clone https://github.com/seu-usuario/GPE.git
+git clone https://github.com/Global-Energy-Production/GPE.git
 cd GPE
