@@ -1,0 +1,20 @@
+name: Deploy GEP
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npx hardhat test
+      - run: npx hardhat run scripts/deploy.js --network rinkeby
+        env:
+          RINKEBY_URL: ${{ secrets.RINKEBY_URL }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}

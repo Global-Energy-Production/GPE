@@ -1,0 +1,6 @@
+{
+    "short_name": "GEP",
+    "name": "Global Energy Production DEX",
+    "start_url": ".",
+    "display": "standalone"
+  }
